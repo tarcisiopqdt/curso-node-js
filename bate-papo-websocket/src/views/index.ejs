@@ -24,12 +24,12 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form accept-charset="UTF-8" role="form" class="form-signin" action="/chat" method='post'>
+                            <form accept-charset="UTF-8" role="form" class="form-signin" action="/chat" method='POST'>
                                 <fieldset>
                                     <label class="panel-login">
                                         <div class="login_result"></div>
                                     </label>
-                                    <input class="form-control" placeholder="Nome ou apelido" name="apelido" id="apelido" type="text">
+                                    <input class="form-control" placeholder="Nome ou apelido" name="apelido" id="apelido" type="text" value="Tarcisio">
                                     <br></br>
                                     <input class="btn btn-lg btn-success btn-block" type="submit" id="entrar" value="Entrar »">
                                 </fieldset>
@@ -38,7 +38,9 @@
                         <% if(validacao.length > 0) {%>
                             <div>
                                 <ul>
-                                    <li><%= validacao[0].msg %></li>
+                                    <% for(let i = 0; i < validacao.length; i++) {%>
+                                    <li><h1><%= validacao[i] %></h1></li>
+                                    <%}%>
                                 </ul>
                             </div>
                         <% } %>    

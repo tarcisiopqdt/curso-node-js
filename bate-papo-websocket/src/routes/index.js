@@ -1,18 +1,20 @@
-const app = require('../../app')
 const indexController = require('../controllers/indexController')
 const chatController = require('../controllers/chatController')
 
-module.exports = function(app){
-  app.get('/', function(req,res){
-    indexController(app, req, res)
+module.exports = function(application){
+
+  application.get('/', function(req,res){
+    indexController(application, req, res)
   })
 
-  app.get('/chat', function(req,res){
-    chatController.iniciaChat(app,req,res)
+  application.get('/chat', function(req,res){
+    chatController.iniciaChat(application,req,res)
   })
 
-  app.post('/chat', function(req, res){
-    chatController.iniciaChat(app, req, res)
+  application.post('/chat', function(req, res){
+    console.log("reqbody: " + req.body) // retorna [object Object]
+    chatController.iniciaChat(application, req,res)
+
   })
   
 }
