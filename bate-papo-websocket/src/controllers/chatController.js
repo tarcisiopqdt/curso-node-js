@@ -1,4 +1,3 @@
-const server = require('../../config/server');
 module.exports.iniciaChat = function(app, req, res){
   
   const dadosForm  = req.body; 
